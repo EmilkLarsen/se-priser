@@ -12,10 +12,12 @@ OG_RE = re.compile(r'og:image"\s*content="([^"]+)"')
 NAME_RE = re.compile(r"<title[^>]*>([^<]+)</title>")
 
 
-# same product-shape filter proven on bauhaus.dk: dimensions/specs/unit tokens
-PRODUCT_PAT = re.compile(
-    r"(\d+x\d+|-p-\d{4,}|-\d+-\d+-|-\d+-w-|-\d+-v-|-\d+-a-|-\d+-k-"
-    r"|o\d+-\d+-cm-|\d+-stk|\d+-lm-|oe\d+cm|\d+,\d+-v|\d+-mm|\d+-cm)")
+# Swedish product URLs are ROOT-LEVEL slugs with model/dimension digits
+# (toppskruv-4x45mm-a96-100st); categories are multi-segment paths or
+# filtered category variants (stupror-tillbehor/75-mm). Verified live:
+# root-level + digits -> itemprop price+sku present.
+PRODUCT_PAT = re.compile(r"\d{1,4}x\d+|-\d+-\d+-|\d+-st\b|\d+st\b|\d+-pack|"
+                          r"\d+mm\b|\d+cm\b|\d+l\b|-\d+-|\d{2,}x\d+")
 
 
 def fetch_url_list(limit=None):
@@ -24,7 +26,8 @@ def fetch_url_list(limit=None):
     urls = []
     for f in files:
         us = [u for u in sitemap_urls(get(f))
-              if u != BASE + "/" and "catalog/category" not in u
+              if u.rstrip("/").count("/") == 3          # root-level only
+              and u != BASE + "/"
               and PRODUCT_PAT.search(u)]
         urls.extend(us)
         if limit and len(urls) >= limit:
