@@ -1,6 +1,6 @@
 {
  "date": "2026-09-27",
- "total_rows": 10677,
+ "total_rows": 10678,
  "chains": {
   "bauhaus_se": {
    "products": 0,
@@ -10,11 +10,11 @@
    "seconds": 24.3
   },
   "byggmax_se": {
-   "products": 10672,
+   "products": 10673,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 9671.2
+   "seconds": 9671.1
   }
  }
 }
