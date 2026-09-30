@@ -2,7 +2,7 @@
 /media/sitemap/sitemap-{1..N}-*.xml; product pages carry itemprop microdata
 (exactly one per page) + itemprop sku. Category pages filtered by title."""
 import re
-from common import get, sitemap_urls, sane_price, write_jsonl, pmap
+from common import get, sitemap_urls, sane_price, write_jsonl, pmap, scrape_with_checkpoint
 
 BASE = "https://www.bauhaus.se"
 OUT = "data/latest/bauhaus_se.jsonl"
@@ -64,13 +64,8 @@ def handle(u, html):
     }]
 
 
-def scrape(limit=None):
-    def work(u):
-        try:
-            return handle(u, get(u))
-        except Exception:
-            return []
-    return pmap(work, fetch_url_list(limit))
+def scrape(limit=None, deadline=None):
+    return scrape_with_checkpoint("bauhaus_se", fetch_url_list(limit), handle, limit, deadline)
 
 
 if __name__ == "__main__":
