@@ -3,11 +3,11 @@
  "total_rows": 71415,
  "chains": {
   "bauhaus_se": {
-   "products": 29961,
+   "products": 58812,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18002.5
+   "seconds": 16441.9
   },
   "byggmax_se": {
    "products": 12017,
