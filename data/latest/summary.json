@@ -1,20 +1,20 @@
 {
- "date": "2026-10-29",
- "total_rows": 71506,
+ "date": "2026-10-30",
+ "total_rows": 71474,
  "chains": {
   "byggmax_se": {
-   "products": 12000,
+   "products": 11999,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 5427.3
+   "expired": 32,
+   "seconds": 5425.2
   },
   "bauhaus_se": {
-   "products": 58643,
+   "products": 28793,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 1817.7
+   "seconds": 18002.6
   }
  }
 }
