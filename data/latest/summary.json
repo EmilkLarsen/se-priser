@@ -7,8 +7,11 @@
    "kept_previous": true
   },
   "bauhaus_se": {
-   "error": "collapse guard: 29 rows vs 59176 before",
-   "kept_previous": true
+   "products": 34868,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 18002.2
   }
  }
 }
