@@ -2,11 +2,8 @@
  "date": "2026-11-13",
  "chains": {
   "byggmax_se": {
-   "products": 11943,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 1,
-   "seconds": 5451.5
+   "error": "collapse guard: 30 rows vs 12019 before",
+   "kept_previous": true
   }
  }
 }
