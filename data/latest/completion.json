@@ -1,12 +1,12 @@
 {
- "date": "2026-11-18",
+ "date": "2026-11-19",
  "detail": {
   "bauhaus_se": {
-   "rows": 59347,
+   "rows": 59334,
    "complete": false
   },
   "byggmax_se": {
-   "rows": 12018,
+   "rows": 12050,
    "complete": true
   }
  }
